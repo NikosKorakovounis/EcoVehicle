@@ -76,6 +76,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="loginMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="home">
           <Properties>
@@ -90,6 +93,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Home"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="homeMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -101,7 +107,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="96" width="842" height="500"/>
+          <AbsoluteConstraints x="0" y="96" width="840" height="500"/>
         </Constraint>
       </Constraints>
 

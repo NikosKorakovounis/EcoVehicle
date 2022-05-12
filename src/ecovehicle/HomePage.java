@@ -42,11 +42,21 @@ public class HomePage extends javax.swing.JFrame {
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_login_30px.png"))); // NOI18N
         login.setText("Login");
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+        });
 
         home.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         home.setForeground(new java.awt.Color(255, 255, 255));
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_home_30px_4.png"))); // NOI18N
         home.setText("Home");
+        home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,11 +102,23 @@ public class HomePage extends javax.swing.JFrame {
         jLabel4.setText("EcoVehicle ");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 842, 500));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 840, 500));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
+        HomePage a = new HomePage();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_homeMouseClicked
+
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        LoginPage a = new LoginPage();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_loginMouseClicked
 
     /**
      * @param args the command line arguments
