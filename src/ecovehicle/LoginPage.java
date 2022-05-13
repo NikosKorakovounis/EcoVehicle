@@ -5,11 +5,20 @@
  */
 package ecovehicle;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class LoginPage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form HomePage
-     */
+    Connection con;
+    ResultSet rs;
+    PreparedStatement ps;
     public LoginPage() {
         initComponents();
     }
@@ -120,6 +129,11 @@ public class LoginPage extends javax.swing.JFrame {
         LoginButton.setForeground(new java.awt.Color(255, 255, 255));
         LoginButton.setText("Login");
         LoginButton.setBorder(null);
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 190, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
@@ -133,6 +147,134 @@ public class LoginPage extends javax.swing.JFrame {
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        String username = user.getText();
+        String password = pass.getText();
+        String usercategory = (String) category.getSelectedItem();
+        
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/ecovehicle","root","");
+            
+              if(category.getSelectedItem().equals("Admin"))
+         {
+             ps=con.prepareStatement("select * from users where username=? and password=? and category=? ");
+             ps.setString(1, username);
+             ps.setString(2, password);
+             ps.setString(3,usercategory);
+             rs = ps.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login!");
+              Admin a = new Admin();
+             a.setVisible(true);
+             this.dispose();
+              
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username, password or user category are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             user.setText("");
+             pass.setText("");
+             category.setSelectedItem("Admin");
+                     
+          }
+         }
+               if(category.getSelectedItem().equals("User"))
+         {
+             ps=con.prepareStatement("select * from users where username=? and password=? and category=? ");
+             ps.setString(1, username);;
+             ps.setString(2, password);
+             ps.setString(3,usercategory);
+             rs = ps.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login!");
+              User a = new User();
+             a.setVisible(true);
+             this.dispose();
+              
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username, password or user category are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             user.setText("");
+             pass.setText("");
+             category.setSelectedItem("Admin");
+                     
+          }
+         }
+               
+                if(category.getSelectedItem().equals("Car Service"))
+         {
+             ps=con.prepareStatement("select * from users where username=? and password=? and category=? ");
+             ps.setString(1, username);;
+             ps.setString(2, password);
+             ps.setString(3,usercategory);
+             rs = ps.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login!");
+              CarService a = new CarService();
+             a.setVisible(true);
+             this.dispose();
+              
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username, password or user category are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             user.setText("");
+             pass.setText("");
+             category.setSelectedItem("Admin");
+                     
+          }
+         }
+        
+                
+                if(category.getSelectedItem().equals("Owner"))
+         {
+             ps=con.prepareStatement("select * from users where username=? and password=? and category=? ");
+             ps.setString(1, username);;
+             ps.setString(2, password);
+             ps.setString(3,usercategory);
+             rs = ps.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login!");
+              Owner a = new Owner();
+             a.setVisible(true);
+             this.dispose();
+              
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username, password or user category are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             user.setText("");
+             pass.setText("");
+             category.setSelectedItem("Admin");
+                     
+          }
+         }
+        
+      
+            
+            
+            
+            
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
