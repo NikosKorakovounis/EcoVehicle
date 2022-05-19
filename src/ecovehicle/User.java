@@ -19,8 +19,12 @@ public class User extends javax.swing.JFrame {
     Connection con;
     ResultSet rs;
     PreparedStatement ps;
+    
+        String Username = LoginPage.user.getText();
+        
     public User() {
         initComponents();
+        userSession.setText(Username);
     }
 
     /**
@@ -42,6 +46,7 @@ public class User extends javax.swing.JFrame {
         bookRoadTrip = new javax.swing.JLabel();
         giftBasket = new javax.swing.JLabel();
         searchVehicle = new javax.swing.JLabel();
+        userSession = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -143,7 +148,7 @@ public class User extends javax.swing.JFrame {
                 giftBasketMouseClicked(evt);
             }
         });
-        jPanel2.add(giftBasket, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, -1, -1));
+        jPanel2.add(giftBasket, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, -1, -1));
 
         searchVehicle.setBackground(new java.awt.Color(255, 255, 255));
         searchVehicle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -157,6 +162,12 @@ public class User extends javax.swing.JFrame {
             }
         });
         jPanel2.add(searchVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
+
+        userSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        userSession.setForeground(new java.awt.Color(23, 148, 175));
+        userSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_user_30px.png"))); // NOI18N
+        userSession.setText(" ");
+        jPanel2.add(userSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
@@ -239,5 +250,6 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JLabel rentVehicle;
     private javax.swing.JLabel searchVehicle;
     private javax.swing.JLabel trackVehicle;
+    private javax.swing.JLabel userSession;
     // End of variables declaration//GEN-END:variables
 }

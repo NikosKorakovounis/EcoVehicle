@@ -19,8 +19,14 @@ public class Admin extends javax.swing.JFrame {
     Connection con;
     ResultSet rs;
     PreparedStatement ps;
+    
+    
+    String Username = LoginPage.user.getText();
+    
+    
     public Admin() {
         initComponents();
+        adminSession.setText(Username);
     }
 
     /**
@@ -34,9 +40,13 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         logincapital = new javax.swing.JLabel();
-        back = new javax.swing.JLabel();
+        logout = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        addOwner = new javax.swing.JLabel();
+        addCarService = new javax.swing.JLabel();
+        addUser = new javax.swing.JLabel();
+        adminSession = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -48,13 +58,13 @@ public class Admin extends javax.swing.JFrame {
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
         logincapital.setText("Admin Page");
 
-        back.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        back.setForeground(new java.awt.Color(255, 255, 255));
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
-        back.setText("Logout");
-        back.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
+        logout.setText("Logout");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backMouseClicked(evt);
+                logoutMouseClicked(evt);
             }
         });
 
@@ -70,7 +80,7 @@ public class Admin extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(logincapital)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
-                .addComponent(back)
+                .addComponent(logout)
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
@@ -79,7 +89,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logincapital)
-                    .addComponent(back))
+                    .addComponent(logout))
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -91,17 +101,81 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addOwner.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        addOwner.setForeground(new java.awt.Color(23, 148, 175));
+        addOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_landlord_30px.png"))); // NOI18N
+        addOwner.setText("Add Owner ");
+        addOwner.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addOwner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addOwnerMouseClicked(evt);
+            }
+        });
+        jPanel2.add(addOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
+
+        addCarService.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        addCarService.setForeground(new java.awt.Color(23, 148, 175));
+        addCarService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_service_30px.png"))); // NOI18N
+        addCarService.setText("Add Car Service ");
+        addCarService.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addCarService.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addCarServiceMouseClicked(evt);
+            }
+        });
+        jPanel2.add(addCarService, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
+
+        addUser.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        addUser.setForeground(new java.awt.Color(23, 148, 175));
+        addUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_user_30px.png"))); // NOI18N
+        addUser.setText("Add User ");
+        addUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addUserMouseClicked(evt);
+            }
+        });
+        jPanel2.add(addUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        adminSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        adminSession.setForeground(new java.awt.Color(23, 148, 175));
+        adminSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_admin_settings_male_30px.png"))); // NOI18N
+        adminSession.setText(" ");
+        adminSession.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminSessionMouseClicked(evt);
+            }
+        });
+        jPanel2.add(adminSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 260, 40));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         HomePage a = new HomePage();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backMouseClicked
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void addOwnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addOwnerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addOwnerMouseClicked
+
+    private void addCarServiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCarServiceMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addCarServiceMouseClicked
+
+    private void addUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addUserMouseClicked
+
+    private void adminSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminSessionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminSessionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -146,10 +220,14 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back;
+    private javax.swing.JLabel addCarService;
+    private javax.swing.JLabel addOwner;
+    private javax.swing.JLabel addUser;
+    private javax.swing.JLabel adminSession;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel logout;
     // End of variables declaration//GEN-END:variables
 }

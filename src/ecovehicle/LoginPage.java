@@ -324,6 +324,6 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
     private javax.swing.JPasswordField pass;
-    private javax.swing.JTextField user;
+    public static javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }
