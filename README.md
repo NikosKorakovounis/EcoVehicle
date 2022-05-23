@@ -4,8 +4,11 @@ Semester Project for Software Engineering course of CEID UPatras (2022)
 ## Technologies
 * Java
 * Java Swing
+* XML
+* SQL
 * Apache Netbeans IDE
 * Pichon for icons
+* XAMPP Server
 
 ## Screenshots
 * Home Page
