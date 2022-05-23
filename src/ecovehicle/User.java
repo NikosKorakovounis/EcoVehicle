@@ -16,10 +16,6 @@ import javax.swing.JOptionPane;
 
 public class User extends javax.swing.JFrame {
 
-    Connection con;
-    ResultSet rs;
-    PreparedStatement ps;
-    
         String Username = LoginPage.user.getText();
         
     public User() {

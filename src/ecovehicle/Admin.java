@@ -15,11 +15,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Admin extends javax.swing.JFrame {
-
-    Connection con;
-    ResultSet rs;
-    PreparedStatement ps;
-    
     
     String Username = LoginPage.user.getText();
     
