@@ -16,11 +16,12 @@ import javax.swing.JOptionPane;
 
 public class Owner extends javax.swing.JFrame {
 
-    Connection con;
-    ResultSet rs;
-    PreparedStatement ps;
+    String Username = LoginPage.user.getText();
+
+    
     public Owner() {
         initComponents();
+        ownerSession.setText(Username);
     }
 
     /**
@@ -34,9 +35,15 @@ public class Owner extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         logincapital = new javax.swing.JLabel();
-        back = new javax.swing.JLabel();
+        logout = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        back1 = new javax.swing.JLabel();
+        ownerSession = new javax.swing.JLabel();
+        checkoutCar = new javax.swing.JLabel();
+        premiumPackage = new javax.swing.JLabel();
+        customersRating = new javax.swing.JLabel();
+        myGarage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -48,13 +55,13 @@ public class Owner extends javax.swing.JFrame {
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
         logincapital.setText("Owner");
 
-        back.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        back.setForeground(new java.awt.Color(255, 255, 255));
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
-        back.setText("Logout");
-        back.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
+        logout.setText("Logout");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backMouseClicked(evt);
+                logoutMouseClicked(evt);
             }
         });
 
@@ -70,7 +77,7 @@ public class Owner extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(logincapital)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
-                .addComponent(back)
+                .addComponent(logout)
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
@@ -79,7 +86,7 @@ public class Owner extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logincapital)
-                    .addComponent(back))
+                    .addComponent(logout))
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -91,17 +98,112 @@ public class Owner extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        back1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        back1.setForeground(new java.awt.Color(23, 148, 175));
+        back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_financial_growth_analysis_30px.png"))); // NOI18N
+        back1.setText("Financial Data");
+        back1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        back1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                back1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
+
+        ownerSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        ownerSession.setForeground(new java.awt.Color(23, 148, 175));
+        ownerSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_landlord_30px.png"))); // NOI18N
+        ownerSession.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ownerSessionMouseClicked(evt);
+            }
+        });
+        jPanel2.add(ownerSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 260, 40));
+
+        checkoutCar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        checkoutCar.setForeground(new java.awt.Color(23, 148, 175));
+        checkoutCar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_dealership_building_30px.png"))); // NOI18N
+        checkoutCar.setText("Checkout Car");
+        checkoutCar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        checkoutCar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkoutCarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(checkoutCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
+
+        premiumPackage.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        premiumPackage.setForeground(new java.awt.Color(23, 148, 175));
+        premiumPackage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_best_seller_30px.png"))); // NOI18N
+        premiumPackage.setText("Premium Package");
+        premiumPackage.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        premiumPackage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                premiumPackageMouseClicked(evt);
+            }
+        });
+        jPanel2.add(premiumPackage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
+
+        customersRating.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        customersRating.setForeground(new java.awt.Color(23, 148, 175));
+        customersRating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_very_popular_topic_30px.png"))); // NOI18N
+        customersRating.setText("Customers Rating");
+        customersRating.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        customersRating.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                customersRatingMouseClicked(evt);
+            }
+        });
+        jPanel2.add(customersRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+
+        myGarage.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        myGarage.setForeground(new java.awt.Color(23, 148, 175));
+        myGarage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_garage_30px.png"))); // NOI18N
+        myGarage.setText("My Garage");
+        myGarage.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        myGarage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                myGarageMouseClicked(evt);
+            }
+        });
+        jPanel2.add(myGarage, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         HomePage a = new HomePage();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backMouseClicked
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_back1MouseClicked
+
+    private void ownerSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ownerSessionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ownerSessionMouseClicked
+
+    private void checkoutCarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutCarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkoutCarMouseClicked
+
+    private void premiumPackageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_premiumPackageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_premiumPackageMouseClicked
+
+    private void customersRatingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customersRatingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customersRatingMouseClicked
+
+    private void myGarageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myGarageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_myGarageMouseClicked
 
     /**
      * @param args the command line arguments
@@ -146,10 +248,16 @@ public class Owner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back;
+    private javax.swing.JLabel back1;
+    private javax.swing.JLabel checkoutCar;
+    private javax.swing.JLabel customersRating;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel logout;
+    private javax.swing.JLabel myGarage;
+    private javax.swing.JLabel ownerSession;
+    private javax.swing.JLabel premiumPackage;
     // End of variables declaration//GEN-END:variables
 }
