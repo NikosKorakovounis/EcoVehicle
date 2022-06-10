@@ -178,7 +178,9 @@ public class User extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMouseClicked
 
     private void rentVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentVehicleMouseClicked
-        // TODO add your handling code here:
+        UserRentVehicle a = new UserRentVehicle();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_rentVehicleMouseClicked
 
     private void trackVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trackVehicleMouseClicked

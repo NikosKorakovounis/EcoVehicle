@@ -14,11 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class UserSearchVehicle extends javax.swing.JFrame {
+public class UserRentVehicle extends javax.swing.JFrame {
 
         String Username = LoginPage.user.getText();
         
-    public UserSearchVehicle() {
+    public UserRentVehicle() {
         initComponents();
         userSession.setText(Username);
     }
@@ -52,7 +52,7 @@ public class UserSearchVehicle extends javax.swing.JFrame {
 
         logincapital.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
-        logincapital.setText("User Page - Search Vehicle");
+        logincapital.setText("User Page - Rent Vehicle");
 
         back.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         back.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,7 +75,7 @@ public class UserSearchVehicle extends javax.swing.JFrame {
                 .addComponent(logo)
                 .addGap(50, 50, 50)
                 .addComponent(logincapital)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(back)
                 .addGap(33, 33, 33))
         );
@@ -172,14 +172,22 @@ public class UserSearchVehicle extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserRentVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserRentVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserRentVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserRentVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -192,7 +200,7 @@ public class UserSearchVehicle extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserSearchVehicle().setVisible(true);
+                new UserRentVehicle().setVisible(true);
             }
         });
     }
