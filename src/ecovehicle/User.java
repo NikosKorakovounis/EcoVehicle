@@ -184,11 +184,15 @@ public class User extends javax.swing.JFrame {
     }//GEN-LAST:event_rentVehicleMouseClicked
 
     private void trackVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trackVehicleMouseClicked
-        // TODO add your handling code here:
+        UserTrackVehicle a = new UserTrackVehicle();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_trackVehicleMouseClicked
 
     private void bookRoadTripMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRoadTripMouseClicked
-        // TODO add your handling code here:
+        UserBookRoadTrip a = new UserBookRoadTrip();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_bookRoadTripMouseClicked
 
     private void giftBasketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_giftBasketMouseClicked

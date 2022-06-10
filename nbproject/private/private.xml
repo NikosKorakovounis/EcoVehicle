@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/Owner.java</file>
+            <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/UserTrackVehicle.java</file>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/User.java</file>
+            <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/UserSearchVehicle.java</file>
+            <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/UserRentVehicle.java</file>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/Admin.java</file>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/HomePage.java</file>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/CarService.java</file>
             <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/LoginPage.java</file>
+            <file>file:/C:/Users/giann/Documents/NetBeansProjects/EcoVehicle/src/ecovehicle/UserBookRoadTrip.java</file>
         </group>
     </open-files>
 </project-private>
