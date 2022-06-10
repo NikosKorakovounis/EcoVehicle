@@ -53,7 +53,7 @@ public class Owner extends javax.swing.JFrame {
 
         logincapital.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
-        logincapital.setText("Owner");
+        logincapital.setText("Owner Page");
 
         logout.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,7 +76,7 @@ public class Owner extends javax.swing.JFrame {
                 .addComponent(logo)
                 .addGap(50, 50, 50)
                 .addComponent(logincapital)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                 .addComponent(logout)
                 .addGap(33, 33, 33))
         );

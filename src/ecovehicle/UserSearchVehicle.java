@@ -14,11 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class User extends javax.swing.JFrame {
+public class UserSearchVehicle extends javax.swing.JFrame {
 
         String Username = LoginPage.user.getText();
         
-    public User() {
+    public UserSearchVehicle() {
         initComponents();
         userSession.setText(Username);
     }
@@ -38,11 +38,11 @@ public class User extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         rentVehicle = new javax.swing.JLabel();
-        trackVehicle = new javax.swing.JLabel();
-        bookRoadTrip = new javax.swing.JLabel();
-        giftBasket = new javax.swing.JLabel();
-        searchVehicle = new javax.swing.JLabel();
+        searchMoto = new javax.swing.JLabel();
+        searchBike = new javax.swing.JLabel();
+        searchCar = new javax.swing.JLabel();
         userSession = new javax.swing.JLabel();
+        searchVan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -98,72 +98,46 @@ public class User extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rentVehicle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        rentVehicle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         rentVehicle.setForeground(new java.awt.Color(23, 148, 175));
-        rentVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_rental_30px.png"))); // NOI18N
-        rentVehicle.setText("Rent Vehicle ");
-        rentVehicle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        rentVehicle.setText("Select Category");
         rentVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rentVehicleMouseClicked(evt);
             }
         });
-        jPanel2.add(rentVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
+        jPanel2.add(rentVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
 
-        trackVehicle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        trackVehicle.setForeground(new java.awt.Color(23, 148, 175));
-        trackVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_track_order_30px.png"))); // NOI18N
-        trackVehicle.setText("Track my Vehicle ");
-        trackVehicle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        trackVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                trackVehicleMouseClicked(evt);
-            }
-        });
-        jPanel2.add(trackVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+        searchMoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        searchMoto.setForeground(new java.awt.Color(23, 148, 175));
+        searchMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_motorcycle_30px.png"))); // NOI18N
+        searchMoto.setText("Moto");
+        jPanel2.add(searchMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
 
-        bookRoadTrip.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        bookRoadTrip.setForeground(new java.awt.Color(23, 148, 175));
-        bookRoadTrip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_adventure_30px.png"))); // NOI18N
-        bookRoadTrip.setText("Book Road Trip ");
-        bookRoadTrip.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        bookRoadTrip.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bookRoadTripMouseClicked(evt);
-            }
-        });
-        jPanel2.add(bookRoadTrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, -1));
+        searchBike.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        searchBike.setForeground(new java.awt.Color(23, 148, 175));
+        searchBike.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_bicycle_30px.png"))); // NOI18N
+        searchBike.setText("Bike");
+        jPanel2.add(searchBike, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
-        giftBasket.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        giftBasket.setForeground(new java.awt.Color(23, 148, 175));
-        giftBasket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_gift_30px.png"))); // NOI18N
-        giftBasket.setText("Gift Basket ");
-        giftBasket.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        giftBasket.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                giftBasketMouseClicked(evt);
-            }
-        });
-        jPanel2.add(giftBasket, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, -1, -1));
-
-        searchVehicle.setBackground(new java.awt.Color(255, 255, 255));
-        searchVehicle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        searchVehicle.setForeground(new java.awt.Color(23, 148, 175));
-        searchVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_search_30px.png"))); // NOI18N
-        searchVehicle.setText("Search Vehicle ");
-        searchVehicle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        searchVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchVehicleMouseClicked(evt);
-            }
-        });
-        jPanel2.add(searchVehicle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
+        searchCar.setBackground(new java.awt.Color(255, 255, 255));
+        searchCar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        searchCar.setForeground(new java.awt.Color(23, 148, 175));
+        searchCar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_30px_1.png"))); // NOI18N
+        searchCar.setText("Car");
+        jPanel2.add(searchCar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         userSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         userSession.setForeground(new java.awt.Color(23, 148, 175));
         userSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_user_30px.png"))); // NOI18N
         userSession.setText(" ");
         jPanel2.add(userSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 40));
+
+        searchVan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        searchVan.setForeground(new java.awt.Color(23, 148, 175));
+        searchVan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_van_30px.png"))); // NOI18N
+        searchVan.setText("Van");
+        jPanel2.add(searchVan, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
@@ -180,24 +154,6 @@ public class User extends javax.swing.JFrame {
     private void rentVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentVehicleMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_rentVehicleMouseClicked
-
-    private void trackVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trackVehicleMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_trackVehicleMouseClicked
-
-    private void bookRoadTripMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRoadTripMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bookRoadTripMouseClicked
-
-    private void giftBasketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_giftBasketMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_giftBasketMouseClicked
-
-    private void searchVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchVehicleMouseClicked
-        UserSearchVehicle a = new UserSearchVehicle();
-        a.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_searchVehicleMouseClicked
 
     /**
      * @param args the command line arguments
@@ -216,14 +172,18 @@ public class User extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserSearchVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -232,22 +192,22 @@ public class User extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new User().setVisible(true);
+                new UserSearchVehicle().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bookRoadTrip;
-    private javax.swing.JLabel giftBasket;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel logout;
     private javax.swing.JLabel rentVehicle;
-    private javax.swing.JLabel searchVehicle;
-    private javax.swing.JLabel trackVehicle;
+    private javax.swing.JLabel searchBike;
+    private javax.swing.JLabel searchCar;
+    private javax.swing.JLabel searchMoto;
+    private javax.swing.JLabel searchVan;
     private javax.swing.JLabel userSession;
     // End of variables declaration//GEN-END:variables
 }
