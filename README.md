@@ -49,6 +49,14 @@ Semester Project for Software Engineering course of CEID UPatras (2022)
 
 ![UserRentVehicle](https://user-images.githubusercontent.com/102259553/173136485-3ddf289e-3680-4d6e-a754-3ab47f7b8c97.PNG)
 
+* User Page - Book Road Trip
+
+![UserBookRoadTrip](https://user-images.githubusercontent.com/102544129/173146232-3d15594f-27f0-4c8b-9402-21c14b346cbd.PNG)
+
+* User Page - Track my Vehicle
+
+![UserTrackVehicle](https://user-images.githubusercontent.com/102544129/173146237-d2eec5f4-53b4-4fb3-8f90-c445c0ababe0.PNG)
+
 * Car Service Page
 
 ![CarServicePage](https://user-images.githubusercontent.com/102407318/169908697-f3830717-85fd-4b3f-9ef1-882eaa7eb050.PNG)
