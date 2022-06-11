@@ -81,6 +81,14 @@ Semester Project for Software Engineering course of CEID UPatras (2022)
 
 ![OwnerPage](https://user-images.githubusercontent.com/102544129/169910910-2cc48454-bd30-446c-91f6-75cd50a12759.PNG)
 
+* Owner Page - Financial Data
+
+![OwnerFinancialData](https://user-images.githubusercontent.com/102544129/173190918-a773dd7f-9e70-4d0a-814b-259cc9c65dd5.PNG)
+
+* Owner Page - My Garage
+
+![OwnerMyGarage](https://user-images.githubusercontent.com/102544129/173190892-37528c71-e363-4ced-bc39-80d3c8553d96.PNG)
+
 
 ## Download Instructions
 https://github.com/NikosKorakovounis/EcoVehicle/tree/main/dist
