@@ -41,6 +41,14 @@ Semester Project for Software Engineering course of CEID UPatras (2022)
 
 ![AdminAddUser](https://user-images.githubusercontent.com/105310637/173185895-6478aba0-abf9-43d0-b6c6-7b3966a78fca.PNG)
 
+* Admin Page - Add Owner
+
+![AdminAddOwner](https://user-images.githubusercontent.com/105310637/173186624-74a0cd33-732d-4a11-80b4-e52d35efc204.PNG)
+
+* Admin Page - Add Car Service
+
+![AdminAddCarService](https://user-images.githubusercontent.com/105310637/173186623-d11fabbe-73f8-4efa-bd09-bb3e8cd02a3a.PNG)
+
 * User Page
 
 ![UserPage](https://user-images.githubusercontent.com/102259553/169402626-0a92661c-69dd-46cf-922a-66a1f943d8ae.PNG)
