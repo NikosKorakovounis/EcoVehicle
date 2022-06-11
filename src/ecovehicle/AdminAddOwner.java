@@ -14,12 +14,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class Admin extends javax.swing.JFrame {
+public class AdminAddOwner extends javax.swing.JFrame {
     
     String Username = LoginPage.user.getText();
     
     
-    public Admin() {
+    public AdminAddOwner() {
         initComponents();
         adminSession.setText(Username);
     }
@@ -35,13 +35,17 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         logincapital = new javax.swing.JLabel();
-        logout = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         addOwner = new javax.swing.JLabel();
         addCarService = new javax.swing.JLabel();
         addUser = new javax.swing.JLabel();
         adminSession = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -51,15 +55,15 @@ public class Admin extends javax.swing.JFrame {
 
         logincapital.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
-        logincapital.setText("Admin Page");
+        logincapital.setText("Admin Page - Add Owner");
 
-        logout.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
-        logout.setText("Logout");
-        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_back_30px.png"))); // NOI18N
+        back.setText("Back");
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutMouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
 
@@ -74,8 +78,8 @@ public class Admin extends javax.swing.JFrame {
                 .addComponent(logo)
                 .addGap(50, 50, 50)
                 .addComponent(logincapital)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
-                .addComponent(logout)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addComponent(back)
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
@@ -84,7 +88,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logincapital)
-                    .addComponent(logout))
+                    .addComponent(back))
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -99,39 +103,36 @@ public class Admin extends javax.swing.JFrame {
 
         addOwner.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addOwner.setForeground(new java.awt.Color(23, 148, 175));
-        addOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_landlord_30px.png"))); // NOI18N
-        addOwner.setText("Add Owner ");
-        addOwner.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_password_30px.png"))); // NOI18N
+        addOwner.setText("Password");
         addOwner.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addOwnerMouseClicked(evt);
             }
         });
-        jPanel2.add(addOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
+        jPanel2.add(addOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
 
         addCarService.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addCarService.setForeground(new java.awt.Color(23, 148, 175));
-        addCarService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_service_30px.png"))); // NOI18N
-        addCarService.setText("Add Car Service ");
-        addCarService.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addCarService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_management_30px.png"))); // NOI18N
+        addCarService.setText("Role");
         addCarService.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addCarServiceMouseClicked(evt);
             }
         });
-        jPanel2.add(addCarService, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
+        jPanel2.add(addCarService, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
 
         addUser.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addUser.setForeground(new java.awt.Color(23, 148, 175));
         addUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_user_30px.png"))); // NOI18N
-        addUser.setText("Add User ");
-        addUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        addUser.setText("Username");
         addUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addUserMouseClicked(evt);
             }
         });
-        jPanel2.add(addUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        jPanel2.add(addUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         adminSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         adminSession.setForeground(new java.awt.Color(23, 148, 175));
@@ -144,39 +145,62 @@ public class Admin extends javax.swing.JFrame {
         });
         jPanel2.add(adminSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 260, 40));
 
+        jButton1.setBackground(new java.awt.Color(23, 148, 175));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Add User");
+        jButton1.setBorder(null);
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 190, 40));
+
+        jTextField1.setBackground(new java.awt.Color(23, 148, 175));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 250, 40));
+
+        jPasswordField1.setBackground(new java.awt.Color(23, 148, 175));
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 250, 40));
+
+        jComboBox1.setBackground(new java.awt.Color(23, 148, 175));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Owner" }));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 250, 40));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        HomePage a = new HomePage();
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        Admin a = new Admin();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_logoutMouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
     private void addOwnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addOwnerMouseClicked
-        AdminAddOwner a = new AdminAddOwner();
-        a.setVisible(true);
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_addOwnerMouseClicked
 
     private void addCarServiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCarServiceMouseClicked
-        AdminAddCarService a = new AdminAddCarService();
-        a.setVisible(true);
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_addCarServiceMouseClicked
 
     private void addUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserMouseClicked
-        AdminAddUser a = new AdminAddUser();
-        a.setVisible(true);
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_addUserMouseClicked
 
     private void adminSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminSessionMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_adminSessionMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,14 +219,38 @@ public class Admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddOwner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddOwner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddOwner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddOwner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -215,7 +263,7 @@ public class Admin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin().setVisible(true);
+                new AdminAddOwner().setVisible(true);
             }
         });
     }
@@ -225,10 +273,14 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel addOwner;
     private javax.swing.JLabel addUser;
     private javax.swing.JLabel adminSession;
+    private javax.swing.JLabel back;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel logout;
     // End of variables declaration//GEN-END:variables
 }
