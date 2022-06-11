@@ -38,7 +38,7 @@ public class Owner extends javax.swing.JFrame {
         logout = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        back1 = new javax.swing.JLabel();
+        financialData = new javax.swing.JLabel();
         ownerSession = new javax.swing.JLabel();
         checkoutCar = new javax.swing.JLabel();
         premiumPackage = new javax.swing.JLabel();
@@ -99,17 +99,17 @@ public class Owner extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        back1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        back1.setForeground(new java.awt.Color(23, 148, 175));
-        back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_financial_growth_analysis_30px.png"))); // NOI18N
-        back1.setText("Financial Data");
-        back1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        back1.addMouseListener(new java.awt.event.MouseAdapter() {
+        financialData.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        financialData.setForeground(new java.awt.Color(23, 148, 175));
+        financialData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_financial_growth_analysis_30px.png"))); // NOI18N
+        financialData.setText("Financial Data");
+        financialData.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
+        financialData.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                back1MouseClicked(evt);
+                financialDataMouseClicked(evt);
             }
         });
-        jPanel2.add(back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
+        jPanel2.add(financialData, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
 
         ownerSession.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ownerSession.setForeground(new java.awt.Color(23, 148, 175));
@@ -181,9 +181,11 @@ public class Owner extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_logoutMouseClicked
 
-    private void back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_back1MouseClicked
+    private void financialDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_financialDataMouseClicked
+        OwnerFinancialData a = new OwnerFinancialData();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_financialDataMouseClicked
 
     private void ownerSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ownerSessionMouseClicked
         // TODO add your handling code here:
@@ -248,9 +250,9 @@ public class Owner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back1;
     private javax.swing.JLabel checkoutCar;
     private javax.swing.JLabel customersRating;
+    private javax.swing.JLabel financialData;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logincapital;
