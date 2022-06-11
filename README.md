@@ -37,6 +37,10 @@ Semester Project for Software Engineering course of CEID UPatras (2022)
 
 ![AdminPage](https://user-images.githubusercontent.com/102259553/169402614-25056ca3-0d5c-440b-bf52-1d630a92f6e5.PNG)
 
+* Admin Page - Add User
+
+![AdminAddUser](https://user-images.githubusercontent.com/105310637/173185895-6478aba0-abf9-43d0-b6c6-7b3966a78fca.PNG)
+
 * User Page
 
 ![UserPage](https://user-images.githubusercontent.com/102259553/169402626-0a92661c-69dd-46cf-922a-66a1f943d8ae.PNG)
