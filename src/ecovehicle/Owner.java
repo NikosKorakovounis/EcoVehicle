@@ -204,7 +204,9 @@ public class Owner extends javax.swing.JFrame {
     }//GEN-LAST:event_customersRatingMouseClicked
 
     private void myGarageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myGarageMouseClicked
-        // TODO add your handling code here:
+       OwnerMyGarage a = new OwnerMyGarage();
+       a.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_myGarageMouseClicked
 
     /**
