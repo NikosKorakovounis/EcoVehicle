@@ -14,11 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class CarService extends javax.swing.JFrame {
+public class CarServiceProgressFixing extends javax.swing.JFrame {
 
     
     String Username = LoginPage.user.getText();
-    public CarService() {
+    public CarServiceProgressFixing() {
         initComponents();
         carServiceSession.setText(Username);
     }
@@ -34,11 +34,12 @@ public class CarService extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         logincapital = new javax.swing.JLabel();
-        logout = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         carServiceSession = new javax.swing.JLabel();
-        progressOfFixing = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -46,17 +47,17 @@ public class CarService extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(23, 148, 175));
 
-        logincapital.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        logincapital.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         logincapital.setForeground(new java.awt.Color(255, 255, 255));
-        logincapital.setText("Car Service Page");
+        logincapital.setText("Car Service Page - Progress of Fixing ");
 
-        logout.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_logout_rounded_left_30px.png"))); // NOI18N
-        logout.setText("Logout");
-        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_back_30px.png"))); // NOI18N
+        back.setText("Back");
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutMouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
 
@@ -69,19 +70,19 @@ public class CarService extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(logo)
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addComponent(logincapital)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
-                .addComponent(logout)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(back)
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logincapital)
-                    .addComponent(logout))
+                    .addComponent(back))
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -104,17 +105,38 @@ public class CarService extends javax.swing.JFrame {
         });
         jPanel2.add(carServiceSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 40));
 
-        progressOfFixing.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        progressOfFixing.setForeground(new java.awt.Color(23, 148, 175));
-        progressOfFixing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ecovehicle/icons/icons8_car_service_30px.png"))); // NOI18N
-        progressOfFixing.setText("Progress of Fixing ");
-        progressOfFixing.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(23, 148, 175), new java.awt.Color(23, 148, 175), null, null));
-        progressOfFixing.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                progressOfFixingMouseClicked(evt);
+        jTable1.setBackground(new java.awt.Color(23, 148, 175));
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Model", "Type", "Status"
             }
-        });
-        jPanel2.add(progressOfFixing, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, -1));
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 520, 190));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 850, 500));
 
@@ -122,21 +144,15 @@ public class CarService extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        HomePage a = new HomePage();
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        CarService a = new CarService();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_logoutMouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
     private void carServiceSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carServiceSessionMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_carServiceSessionMouseClicked
-
-    private void progressOfFixingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_progressOfFixingMouseClicked
-        CarServiceProgressFixing a = new CarServiceProgressFixing();
-        a.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_progressOfFixingMouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,14 +171,22 @@ public class CarService extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CarService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarServiceProgressFixing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CarService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarServiceProgressFixing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CarService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarServiceProgressFixing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CarService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CarServiceProgressFixing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -175,18 +199,19 @@ public class CarService extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CarService().setVisible(true);
+                new CarServiceProgressFixing().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel back;
     private javax.swing.JLabel carServiceSession;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel logincapital;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel logout;
-    private javax.swing.JLabel progressOfFixing;
     // End of variables declaration//GEN-END:variables
 }
